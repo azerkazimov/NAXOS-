@@ -1,5 +1,5 @@
-let track = document.querySelector(".screenshot-track");
-let trackWidth = document.querySelector(".screenshot-picture").offsetWidth;
+let track = document.querySelector(".comment-track");
+let trackWidth = document.querySelector(".comment-box").offsetWidth;
 let trackChildren = [...track.children];
 let dotsContainer = document.querySelector(".dots");
 let currentSlide = 0;

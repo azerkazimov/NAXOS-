@@ -16,23 +16,13 @@
 // import components
 @import "components/cards";
 @import "components/header";
-@import "components/waves";
-@import "components/bounce";
-@import "components/slider";
-@import "components/section-header";
+@import "components/section";
+@import "components/quote";
+@import "components/contact";
 
 // import pages
-@import "pages/main";
-@import "pages/features";
-@import "pages/parallax";
-@import "pages/overview";
-@import "pages/testimonial";
-@import "pages/counter";
-@import "pages/team";
-@import "pages/screenshot";
-@import "pages/FAQs";
-@import "pages/subscribe";
-@import "pages/blog";
-@import "pages/pricing";
-@import "pages/contact";
 @import "pages/footer";
+@import "pages/main";
+@import "pages/overview";
+@import "pages/comments";
+@import "pages/service";

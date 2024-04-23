@@ -1,0 +1,82 @@
+.comments {
+    .comment-track {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3));
+        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: 0;
+        min-width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .comment-item {
+            @extend .p-5;
+            background-color: map-get($colors, secondary);
+            border: 1px solid map-get($colors, primary);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: map-get($colors, primary);
+                color: map-get($colors, natural);
+            }
+
+            .comment-text {
+                img {
+                    width: 20px;
+                }
+
+                @extend .flex-container;
+                gap: 10px;
+
+                .text {
+                    @extend .flex-container;
+                    @extend .flex-column;
+                    @extend .font-size-14;
+
+                    gap: 20px;
+
+                    span {
+                        @extend .font-weight-300;
+                        @extend .font-size-14;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .no-transition {
+        scroll-behavior: auto;
+    }
+
+    .dragging {
+        cursor: grab;
+        user-select: none;
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+    }
+
+    .dots {
+        @extend .flex-container;
+        @extend .flex-justify-center;
+        text-align: center;
+
+        .dot {
+            @extend .mx-1;
+            width: 10px;
+            height: 10px;
+            border: 1px solid map-get($colors, primary);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .active-dot {
+            background-color: map-get($colors, primary);
+        }
+    }
+}

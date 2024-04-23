@@ -1,0 +1,27 @@
+#quote {
+    .quote-content {
+        @extend .flex-container;
+        min-height: 60%;
+        gap: 10px;
+
+        .quote {
+            @extend .flex-container;
+            @extend .flex-align-center;
+
+        }
+
+        .quotes {
+            @extend .flex-container;
+            min-height: 100%;
+
+            &.after {
+                align-items: end;
+            }
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+#service {
+    @extend .py-10;
+
+    .service-item {
+        @extend .p-5;
+        text-align: center;
+
+        .service-icon {
+            @extend .p-5;
+            @extend .mb-2;
+            background-color: map-get($colors, secondary);
+            border-radius: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        span {
+            @extend .font-weight-700;
+        }
+    }
+}
+
+.secondary-bg {
+    background-color: map-get($colors , secondary);
+    color: map-get($colors, primary );
+}
+
+.primary-bg {
+    background-color: map-get($colors , primary);
+    color: map-get($colors, natural);
+}

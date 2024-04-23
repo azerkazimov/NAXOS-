@@ -1,0 +1,74 @@
+// styled header for all section
+.section-content {
+  @extend .flex-container;
+  @extend .flex-column;
+  @extend .px-10;
+  gap: 20px;
+}
+
+.section-heading {
+  @extend .font-size-48;
+  @extend .font-weight-700;
+  color: map-get($colors, primary);
+}
+
+.section-text {
+  @extend .font-size-14;
+  @extend .font-weight-300;
+  color: map-get($colors, primary);
+  line-height: 1.5
+}
+
+.section-image {
+  @extend .px-10;
+  position: relative;
+
+  .dots {
+    @extend .flex-container;
+    gap: 10px;
+
+    .line {
+      @extend .flex-container;
+      @extend .flex-column;
+      gap: 10px;
+
+      .dot {
+        background-color: map-get($colors, success);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .top {
+    position: absolute;
+    top: 0;
+    left: 30%;
+  }
+
+  .left {
+    position: absolute;
+    bottom: 0;
+    right: 30%;
+  }
+
+  .polygon img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    z-index: -1;
+    filter: grayscale(100%);
+  }
+
+
+  img {
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.white {
+  color: map-get($colors, natural);
+}

@@ -2,26 +2,15 @@
 
 .home {
   width: 100%;
-  background: url('../images/single-image.jpg') center/cover;
-  height: 800px;
   position: relative;
   z-index: 1;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-47deg, #7c4fe0 0%, #4528dc 100%);
-    opacity: 0.9;
-    z-index: -1;
-  }
+
 
   .banner {
-    padding-top: 100px;
+    padding-top: 150px;
     max-width: 100%;
+    background-color: map-get($colors, secondary);
 
     .banner-text {
       max-width: 100%;
@@ -29,120 +18,83 @@
       h1 {
         @extend .pb-5;
         max-width: 100%;
-        color: map-get($colors, light);
-        font-size: 60px;
+        color: map-get($colors, primary);
+        font-size: 54px;
       }
 
       p {
-        @extend .font-weight-500;
         @extend .font-size-18;
         max-width: 100%;
-        color: map-get($colors, light);
+        color: map-get($colors, primary);
         margin-bottom: 30px;
         line-height: 2rem;
       }
     }
 
-    .banner-image img {
-      max-width: 100%;
-    }
-  }
+    .banner-image {
+      position: relative;
 
-  // ===== Search button start =====
-  .search-line {
-    position: fixed;
-    bottom: 100%;
-    right: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background-color: map-get($colors, dark);
-    opacity: 0.85;
-    transition: all 0.3s ease;
 
-    .search-form {
-      @extend .flex-container;
-      @extend .flex-column;
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      text-align: center;
-      transform: translate(-50%, -50%);
-
-      input {
-        @extend .font-size-45;
-        @extend .font-weight-700;
-        color: map-get($colors, natural);
-        background: none !important;
-        border: 0 !important;
-        text-align: center;
+      img {
+        max-width: 100%;
+        min-height: 70vh;
+        object-fit: cover;
+        z-index: 1;
       }
 
-      span {
-        font-size: 16px;
-        color: #ccc;
-        display: inline-block;
-        width: 100%;
+      .image-name {
+        @extend .py-2;
+        @extend .px-5;
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 10px;
+        background-color: map-get($colors, success);
+        position: absolute;
+        bottom: 0;
+        right: -10px;
+        z-index: 2;
+
+        p {
+          @extend .font-weight-700;
+        }
+
+        span {
+          @extend .font-weight-300;
+          @extend .font-size-14;
+        }
       }
-    }
 
-    &.search-active {
-      bottom: 0;
-    }
+      .dots {
+        display: flex;
+        gap: 20px;
 
-    .search-close {
-      padding: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: end;
+        .line {
+          display: flex;
 
-      .search-close-btn {
-        position: relative;
-        display: block;
-        z-index: 999;
-        width: 30px;
-        height: 30px;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-        text-transform: none;
-        transition: all .3s;
+          flex-direction: column;
+          gap: 20px;
 
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          width: 30px;
-          height: 2px;
-          background: #fff;
-        }
-
-        &::before {
-          top: 50%;
-          transform: rotate(135deg);
-        }
-
-        &::after {
-          bottom: calc(50% - 2px);
-          transform: rotate(45deg);
-        }
-
-        &:hover {
-          transform: rotate(180deg);
-
-          &::before,
-          &::after {
-            background: map-get($colors, primary);
+          .dot {
+            width: 6px;
+            height: 6px;
+            background: map-get($colors, dark);
+            border-radius: 50%;
           }
         }
       }
+
+      .polygon img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        transform: translate(20px, 60px);
+        width: 100%;
+        height: 100%;
+      }
+
     }
   }
-
-  // ===== Search button end =====
 }
 
 // ===== Arrow up start =====
@@ -158,6 +110,7 @@
   bottom: 20px;
   left: 95%;
   border-radius: 50%;
+  z-index: 99;
 }
 
 // ===== Arrow up end =====
